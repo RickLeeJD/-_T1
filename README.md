@@ -2,6 +2,19 @@
 
 這是一個現代化、響應式的前端投保系統，專為保險業務員設計。採用企業級架構，具備嚴謹的欄位檢核、直覺的精靈流程 (Wizard) 以及為後端整合做好的資料模型準備。
 
+## 🤖 AI Spec Kit (AI 語境規範套件)
+
+本專案內建 **AI Context Specification Kit**，旨在讓任何 LLM 或 AI Agent (如 GitHub Copilot, Cursor, Windsurf) 能快速理解專案架構並進行協作開發。**所有規範文件皆已繁體中文化。**
+
+*   **位置**: `.github/spec/`
+*   **檔案說明**:
+    *   `ai-context.md`: **專案脈絡檔** - 定義核心業務邏輯、檔案職責與關鍵流程。
+    *   `code-style.md`: **代碼風格檔** - 定義 React 元件寫法、變數命名與 UI 規範。
+    *   `schema-map.json`: **資料映射檔** - 描述前端物件 (`types.ts`) 如何對應至資料庫實體。
+
+**如何使用**:
+當使用 AI 輔助開發工具時，請確保 AI 索引了 `.github/spec/` 目錄。這就像是給了 AI 一本「專案說明書」，能大幅提升程式碼生成的準確度與風格一致性。
+
 ## 🛠 技術棧 (Tech Stack)
 
 *   **Frontend Framework**: React 19 (Hooks, Functional Components)

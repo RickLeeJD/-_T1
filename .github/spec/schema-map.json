@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "1.0",
+  "entityMapping": {
+    "PolicyData": {
+      "description": "提交至後端的根物件 (Root Object)",
+      "dbTable": "POLICY (主表)",
+      "fields": {
+        "policyNo": "POLICY_NO (VARCHAR2) - 保單編號",
+        "applicant": "APPLICANT (Table) - 要保人資料",
+        "insured": "INSURED (Table) - 被保險人資料",
+        "beneficiaries": "BENEFICIARY (Table - 一對多) - 受益人列表",
+        "payment": "PAYMENT (Table) - 繳費資訊"
+      }
+    },
+    "PersonInfo": {
+      "validationRules": ["TaiwanID (身分證檢核)", "AgeCheck (年齡檢核)", "MobileFormat (手機格式)"]
+    },
+    "PaymentInfo": {
+      "sensitiveFields": ["cardNo", "cvv"],
+      "handling": "儲存前必須進行遮罩 (Mask) 或 Token 化處理"
+    }
+  },
+  "enums": {
+    "Relation": "src/types.ts -> Relation (與被保險人關係)",
+    "PaymentMethod": "src/types.ts -> PaymentMethod (繳費方式)"
+  }
+}
